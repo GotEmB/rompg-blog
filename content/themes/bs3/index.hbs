@@ -1,0 +1,25 @@
+{{!< default}}
+<div class="jumbotron">
+	<h1>{{@blog.title}}</h1>
+	<p>{{@blog.description}}</p>
+</div>
+<main class="content" role="main">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			{{#foreach posts}}
+			<article class="panel panel-default {{post_class}}">
+				<div class="panel-heading">
+					<time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> by <a href="mailto:{{author.email}}">{{author.name}}</a>
+					{{#if tags}}<span class="pull-right"><i class="fa fa-tags" title="Tags"></i> {{tags}}</span>{{/if}}
+					<div class="clearfix"></div>
+				</div>
+				<div class="panel-body">
+					<h2 style="margin-top: 0"><a href="{{url}}">{{{title}}}</a></h2>
+					{{excerpt}}&hellip; <a href="{{url}}">See More &raquo;</a>
+				</div>
+			</article>
+			{{/foreach}}
+		</div>
+	</div>
+	{{pagination}}
+</main>

@@ -1,0 +1,11 @@
+<ul class="pager">
+	<li>
+		{{#if prev}}<a href="{{pageUrl prev}}">&larr;</a>{{/if}}
+		{{#unless prev}}<span style="opacity: 0">&larr;</span>{{/unless}}
+	</li>
+	<li><span>Page {{page}} of {{pages}}</span></li>
+	<li>
+		{{#if next}}<a href="{{pageUrl next}}">&rarr;</a>{{/if}}
+		{{#unless next}}<span style="opacity: 0">&rarr;</span>{{/unless}}
+	</li>
+</ul>
