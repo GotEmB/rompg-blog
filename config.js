@@ -44,16 +44,11 @@ config = {
     // When running Ghost in the wild, use the production environment
     // Configure your URL and mail settings here
     production: {
-        url: 'http://rompg-blog.herokuapp.com',
-        mail: {},
+        url: 'http://west.rssoffice.com',
         database: {
-            client: 'postgres',
+            client: 'sqlite3',
             connection: {
-                host: process.env.db_host,
-                user: process.env.db_user,
-                password: process.env.db_pass,
-                database: process.env.db_db,
-                port: process.env.db_port
+                filename: path.join(__dirname, '/content/data/ghost-dev.db')
             },
             debug: false
         },
@@ -61,7 +56,7 @@ config = {
             // Host to be passed to node's `net.Server#listen()`
             host: '0.0.0.0',
             // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
-            port: process.env.PORT
+            port: process.env.ROMPG_BLOG_PORT
         }
     },
 
